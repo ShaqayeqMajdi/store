@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peter Mason</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script src="script.js" defer></script>
+    <link rel="web icon" href="./assets/images/logo/web-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-neutral-800 font-Quicksand">
+    <div
+      class="flex justify-center md:justify-between items-center text-sm pt-16 mb-4 md:px-24 text-gray-300 container mx-auto"
+    >
+      <div class="flex items-center space-x-6 space-y-2 flex-col md:flex-row">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-phone text-gold-100"></i>
+          <span class="hover:text-gold-100">123-456-7890</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-envelope text-gold-100"></i>
+          <span class="hover:text-gold-100">info@yoursite.com</span>
+        </div>
+      </div>
+      <div
+        class="hidden md:flex md:items-center md:space-x-6 md:space-y-2 md:flex-row"
+      >
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-shopping-cart text-gold-100"></i>
+          <span class="hover:text-gold-100">0 items - $0.00</span>
+        </div>
+        <button
+          class="border border-gold-100 text-gold-100 px-4 py-1 flex items-center gap-2 md:py-3 text-sm hover:bg-gold-200 hover:text-black"
+        >
+          <i class="fa fa-user"></i>
+          Sign In / Login
+        </button>
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="flex h-34 justify-center md:h-28 md:-mt-10 container mx-auto">
+      <img src="./assets/images/logo/logo.png" alt="logo" />
+    </div>
+
+    <div class="md:hidden flex items-center justify-center pt-5 gap-3 flex-col">
+      <div class="flex items-center space-x-2 text-gray-300">
+        <i class="fas fa-shopping-cart text-gold-100"></i>
+        <span>0 items - $0.00</span>
+      </div>
+      <button
+        class="border border-gold-100 text-gold-100 px-4 py-2 text-sm hover:bg-gold-200 hover:text-black"
+      >
+        MAKE AN APPOINTMENT
+      </button>
+    </div>
+
+    <!-- Hamburger menu -->
+    <div class="flex justify-center mt-14 md:hidden" onclick="openMenu()">
+      <i class="fas fa-bars text-gold-100 text-xl"></i>
+    </div>
+    <!-- Hamburger Menu Content -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 left-0 w-full h-screen bg-neutral-900 text-white z-40 transform -translate-y-full transition-transform duration-500 ease-in-out flex flex-col items-center py-10"
+    >
+      <button
+        class="absolute top-4 right-6 text-white text-3xl"
+        onclick="closeMenu()"
+      >
+        <i class="fa fa-times text-white"></i>
+      </button>
+
+      <img src="./assets/images/logo/logo.png" alt="logo" class="h-24 mb-10" />
+      <nav class="flex flex-col space-y-6 text-lg">
+        <div class="flex items-center justify-between w-60">
+          <span class="text-gold-100">HOME</span>
+          <i class="fas fa-chevron-down text-sm text-white px-2 py-1"></i>
+        </div>
+        <div class="flex items-center justify-between w-60 hover:text-gold-100">
+          <span>FEATURES</span>
+          <i class="fas fa-chevron-down text-sm text-white px-2 py-1"></i>
+        </div>
+        <div class="flex items-center justify-between w-60 hover:text-gold-100">
+          <span>ABOUT</span>
+          <i class="fas fa-chevron-down text-sm text-white px-2 py-1"></i>
+        </div>
+        <div class="flex items-center justify-between w-60 hover:text-gold-100">
+          <span>SUITS</span>
+        </div>
+        <div class="flex items-center justify-between w-60 hover:text-gold-100">
+          <span>NEWS</span>
+          <i class="fas fa-chevron-down text-sm text-white px-2 py-1"></i>
+        </div>
+        <div class="flex items-center justify-between w-60 hover:text-gold-100">
+          <span>CONTACTS</span>
+        </div>
+      </nav>
+
+      <div class="mt-10 w-60">
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-full px-4 py-2 bg-white text-black"
+        />
+        <div class="flex justify-center space-x-4 mt-4 text-gold-100">
+          <i class="fab fa-twitter hover:text-white"></i>
+          <i class="fab fa-facebook-f hover:text-white"></i>
+          <i class="fab fa-instagram hover:text-white"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full h-px bg-white opacity-10 mx-auto mt-8 md:hidden"></div>
+
+    <!-- Navbar -->
+    <nav
+      class="hidden md:flex md:justify-center md:items-center md:space-x-10 md:py-10 text-md text-gray-400 container mx-auto"
+    >
+      <a href="#" class="relative group text-gold-100 px-2 py-2">
+        HOME
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+        ></span>
+      </a>
+
+      <span class="text-white opacity-10">|</span>
+
+      <!-- FEATURES -->
+      <div class="relative group flex items-center">
+        <a href="#" class="relative group hover:text-gold-100 px-2 py-2">
+          FEATURES
+          <span
+            class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+          ></span>
+        </a>
+        <!-- Dropdown -->
+        <div
+          class="absolute top-11 left-20 -translate-x-1/2 hidden group-hover:flex flex-col gap-5 bg-gold-100 shadow-lg p-4 w-60 z-50"
+        >
+          <a href="#" class="text-white hover:text-yellow-950 transition"
+            >Men's clothing</a
+          >
+          <a href="#" class="text-white hover:text-yellow-950 transition"
+            >Jewelry</a
+          >
+          <a href="#" class="text-white hover:text-yellow-950 transition"
+            >Women's clothing</a
+          >
+          <a href="#" class="text-white hover:text-yellow-950 transition"
+            >Electronics</a
+          >
+        </div>
+      </div>
+
+      <span class="text-white opacity-10">|</span>
+
+      <a href="#" class="relative group hover:text-gold-100 px-2 py-2">
+        ABOUT
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+        ></span>
+      </a>
+
+      <span class="text-white opacity-10">|</span>
+
+      <a href="#" class="relative group hover:text-gold-100 px-2 py-2">
+        SUITS
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+        ></span>
+      </a>
+
+      <span class="text-white opacity-10">|</span>
+      <a href="#" class="relative group hover:text-gold-100 px-2 py-2">
+        NEWS
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+        ></span>
+      </a>
+
+      <span class="text-white opacity-10">|</span>
+
+      <a href="#" class="relative group hover:text-gold-100 px-2 py-2">
+        CONTACTS
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 w-0 bg-gold-100 transition-all duration-500 ease-out group-hover:w-full"
+        ></span>
+      </a>
+    </nav>
+
+    <div class="w-full h-px bg-gray-600"></div>
+  </body>
+</html>
