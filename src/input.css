@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gold-100: #c5a46d;
+  --color-gold-200: #cfb992;
+
+  --font-Quicksand: Quicksand, sans-serif;
+}
