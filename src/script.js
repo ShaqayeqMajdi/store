@@ -22,3 +22,21 @@ function renderCategories(categories) {
     .join("");
   categoryDropdown.innerHTML = template;
 }
+
+// Banner Text
+const part1 = document.getElementById("part1");
+const part2 = document.getElementById("part2");
+
+const txt1 = "Everything You Love, ";
+const txt2 = "All in One Place";
+
+let i1 = 0;
+let i2 = 0;
+
+function type() {
+  if (i1 < txt1.length) part1.textContent += txt1[i1++];
+  else if (i2 < txt2.length) part2.textContent += txt2[i2++];
+  setTimeout(type, 60);
+}
+
+type();
