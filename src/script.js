@@ -40,3 +40,106 @@ function type() {
 }
 
 type();
+
+// Men Products
+const menProducts = document.getElementById("men-products");
+fetch("https://fakestoreapi.com/products/category/men's clothing")
+  .then((response) => response.json())
+  .then((products) => renderMenProducts(products))
+  .catch((err) =>
+    Toastify({
+      text: "Failed to fetch data",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, #fff8e1, #c5a46d)",
+        color: "#333",
+      },
+      onClick: function () {},
+    }).showToast()
+  );
+
+function renderMenProducts(products) {
+  const template = products
+    .map((product) => {
+      return `
+<div class="bg-neutral-800 rounded-4xl p-6 flex flex-col justify-between gap-4 text-center">
+  <div class="w-full h-64 relative rounded-3xl overflow-hidden border-2 border-gold-400 flex items-center justify-center">
+    <img
+      src="${product.image}"
+      alt="${product.title}"
+      class="object-contain h-full w-full"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+  </div>
+  <h3 class="text-lg font-semibold text-gold-100 tracking-wide leading-tight">
+    ${product.title}
+  </h3>
+  <p class="text-xl font-extrabold text-gold-300 tracking-wide">
+    $${product.price}
+  </p>
+ <button class="relative px-6 py-3 rounded-full border text-gold-200 border-gold-300 text-sm tracking-widest overflow-hidden hover:text-white group">
+  <span class="absolute inset-0 cursor-pointer bg-gold-300 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+ <span class="relative z-10">BUY NOW</span>
+  </button>
+</div>
+`;
+    })
+    .join("");
+
+  menProducts.innerHTML = template;
+}
+
+// Women Products
+const womenProducts = document.getElementById("women-products");
+fetch("https://fakestoreapi.com/products/category/women's clothing")
+  .then((response) => response.json())
+  .then((products) => renderWomenProducts(products.slice(0, 4)))
+  .catch((err) =>
+    Toastify({
+      text: "Failed to fetch data",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, #fff8e1, #c5a46d)",
+        color: "#333",
+      },
+      onClick: function () {},
+    }).showToast()
+  );
+
+function renderWomenProducts(products) {
+  const template = products
+    .map((product) => {
+      return `
+<div class="bg-neutral-800 rounded-4xl p-6 flex flex-col justify-between gap-4 text-center">
+  <div class="w-full h-64 relative rounded-3xl overflow-hidden border-2 border-gold-400 flex items-center justify-center">
+    <img
+      src="${product.image}"
+      alt="${product.title}"
+      class="object-contain h-full w-full"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+  </div>
+  <h3 class="text-lg font-semibold text-gold-100 tracking-wide leading-tight">
+    ${product.title}
+  </h3>
+  <p class="text-xl font-extrabold text-gold-300 tracking-wide">
+    $${product.price}
+  </p>
+ <button class="relative px-6 py-3 rounded-full border text-gold-200 border-gold-300 text-sm tracking-widest overflow-hidden hover:text-white group">
+  <span class="absolute inset-0 cursor-pointer bg-gold-300 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+ <span class="relative z-10">BUY NOW</span>
+  </button>
+</div>
+`;
+    })
+    .join("");
+  womenProducts.innerHTML = template;
+}
